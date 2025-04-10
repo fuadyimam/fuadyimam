@@ -1,0 +1,135 @@
+/* Remove the custom Lucide font implementation */
+/* @font-face {
+  font-family: 'LucideIcons';
+  src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+}
+
+.lucide {
+  font-family: 'LucideIcons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  vertical-align: middle;
+} */
+
+/* Basic scroll animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #111827;
+  color: #D1D5DB;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B7280;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 767px) { /* Below Tailwind's 'md' breakpoint */
+
+  /* Reduce vertical padding on sections for smaller screens */
+  #home, #about, #skills, #projects, #contact {
+    padding-top: 4rem; /* 16 * 0.25rem = 64px */
+    padding-bottom: 4rem; /* 16 * 0.25rem = 64px */
+    padding-left: 1rem; /* 4 * 0.25rem = 16px */
+    padding-right: 1rem; /* 4 * 0.25rem = 16px */
+  }
+
+  /* Specific adjustment for home section top padding due to fixed header */
+  #home {
+     padding-top: 6rem; /* Increased slightly to ensure content is below header */
+  }
+
+  /* Adjust heading sizes */
+  #home h1 {
+    font-size: 2.5rem; /* Tailwind's text-4xl */
+    line-height: 2.75rem;
+  }
+  #home p {
+    font-size: 1.125rem; /* Tailwind's text-lg */
+  }
+  #about h2, #skills h2, #projects h2, #contact h2 {
+    font-size: 2rem; /* Slightly smaller than text-4xl */
+    line-height: 2.25rem;
+    margin-bottom: 2rem; /* Reduce bottom margin */
+  }
+
+  /* Ensure project cards stack cleanly */
+  #projects .grid {
+    grid-template-columns: 1fr; /* Force single column */
+  }
+
+  /* Adjust header padding */
+  header nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Adjust spacing in skills grid */
+  #skills .grid {
+      gap: 1rem; /* Reduce gap between skill items */
+  }
+  #skills .grid > div {
+      padding: 0.75rem; /* Reduce padding inside skill items */
+  }
+  #skills .grid span {
+      font-size: 0.875rem; /* text-sm */
+  }
+
+  /* Adjust About Me stats grid */
+   #about .grid-cols-2 {
+      grid-template-columns: 1fr; /* Stack stats vertically */
+   }
+
+   /* Adjust contact icon sizes and spacing */
+   #contact .flex-wrap a i,
+   #contact .flex-wrap a svg {
+       width: 1.75rem; /* w-7 */
+       height: 1.75rem; /* h-7 */
+   }
+   #contact .flex-wrap {
+       gap: 1rem; /* Reduce gap between icons */
+   }
+}
