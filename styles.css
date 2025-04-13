@@ -126,8 +126,8 @@ body {
    /* Adjust contact icon sizes and spacing */
    #contact .flex-wrap a i,
    #contact .flex-wrap a svg {
-       width: 1.75rem; /* w-7 */
-       height: 1.75rem; /* h-7 */
+       width: 2rem; /* w-8 */
+       height: 2rem; /* h-8 */
    }
    #contact .flex-wrap {
        gap: 1rem; /* Reduce gap between icons */

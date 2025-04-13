@@ -15,7 +15,7 @@ menuButton.addEventListener('click', () => {
             lucide.createIcons({
                 nodes: [iconElement],
                 attrs: { // Ensure attributes like class are preserved
-                    'class': iconElement.getAttribute('class') || 'w-6 h-6' 
+                    'class': iconElement.getAttribute('class') || 'w-6 h-6'
                 }
             });
         }
@@ -30,13 +30,13 @@ mobileLinks.forEach(link => {
             mobileMenu.classList.add('hidden');
             const iconElement = menuButton.querySelector('i[data-lucide]');
             if (iconElement) {
-                iconElement.setAttribute('data-lucide', 'menu'); // Reset to Menu icon
+                iconElement.setAttribute('data-lucide', 'menu');
                  // Re-render the specific icon
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons({
                         nodes: [iconElement],
                         attrs: {
-                           'class': iconElement.getAttribute('class') || 'w-6 h-6' 
+                           'class': iconElement.getAttribute('class') || 'w-6 h-6'
                         }
                     });
                 }
