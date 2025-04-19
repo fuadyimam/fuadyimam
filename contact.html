@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("p8my3MdOT6BplqeXA"); // Replace with your EmailJS public key
+        })();
+    </script>
+    <style>
+        /* Basic body styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Assuming Inter is loaded elsewhere or use a fallback */
+            background-color: #111827;
+            color: #D1D5DB;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Smooth scroll (optional for internal CSS, but kept for consistency) */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B7280;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1F2937; /* Example background */
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 1px solid #374151;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem; /* Example size */
+            color: #F9FAFB; /* Lighter color for header */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li a {
+            color: #9CA3AF; /* Lighter gray for nav links */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active { /* Assuming 'active' class for current page */
+            color: #EC4899; /* Accent color on hover/active */
+        }
+
+        /* Style for main content area */
+        main {
+            display: block;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #1F2937; /* Card background */
+            border-radius: 0.5rem; /* Rounded corners */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Subtle shadow */
+        }
+        section h2 {
+            font-size: 1.75rem; /* Slightly smaller heading */
+            color: #F9FAFB;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Form Styles */
+        #contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #D1D5DB;
+        }
+        #contact-form input[type="text"],
+        #contact-form input[type="email"],
+        #contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            border: 1px solid #4B5563;
+            background-color: #374151; /* Slightly different input background */
+            color: #D1D5DB;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+        #contact-form textarea {
+            min-height: 100px; /* Minimum height for textarea */
+            resize: vertical; /* Allow vertical resize */
+        }
+        #contact-form button[type="submit"] {
+            display: inline-block;
+            width: auto; /* Don't force full width on desktop */
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(to right, #8B5CF6, #EC4899); /* Gradient button */
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        #contact-form button[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        /* Contact Info Styles */
+        #contact-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        #contact-info a {
+            color: #A78BFA; /* Violet color for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        #contact-info a:hover {
+            color: #C4B5FD; /* Lighter violet on hover */
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.875rem;
+            color: #6B7280;
+            border-top: 1px solid #374151;
+        }
+
+        /* --- Mobile Adjustments --- */
+        @media (max-width: 767px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 0.75rem; /* Reduce gap */
+            }
+            nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            main {
+                margin: 1rem auto; /* Reduce top/bottom margin */
+                padding: 0 0.5rem; /* Reduce side padding */
+            }
+
+            section {
+                padding: 1rem; /* Reduce section padding */
+            }
+            section h2 {
+                font-size: 1.5rem; /* Reduce heading size */
+                margin-bottom: 1rem;
+            }
+
+            /* Make form elements full width and adjust spacing */
+            #contact-form input[type="text"],
+            #contact-form input[type="email"],
+            #contact-form textarea {
+                padding: 0.6rem;
+                margin-bottom: 0.75rem;
+            }
+            #contact-form button[type="submit"] {
+                width: 100%; /* Make button full width */
+                padding: 0.75rem;
+            }
+
+            /* Adjust contact info section */
+            #contact-info p {
+                margin-bottom: 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 1rem 0.5rem;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="styles.css"> --> <!-- Link removed -->
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li> <!-- Added active class -->
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-form">
+            <h2>Get in Touch</h2>
+<form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="hidden" name="contact_number">
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+<p>Email: <a href="mailto:fyimam35@gmail.com">fyimam35@gmail.com</a></p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <!-- Add other contact details like social media links -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Generate a unique contact number
+            this.contact_number.value = Math.random() * 100000 | 0;
+
+            emailjs.sendForm('service_jzr6sbj', 'template_vnw33tu', this)
+                .then(function() {
+                    alert('SUCCESS!');
+                }, function(error) {
+                    alert('FAILED...', error);
+                });
+        });
+    </script>
+</body>
+</html>

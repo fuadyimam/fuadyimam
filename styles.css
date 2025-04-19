@@ -66,6 +66,15 @@ body {
   background: #6B7280;
 }
 
+/* Style for main content area */
+main {
+  display: block; /* Default, but explicit */
+  max-width: 800px; /* Limit width on larger screens */
+  margin: 2rem auto; /* Center main content */
+  padding: 0 1rem; /* Add horizontal padding */
+}
+
+
 /* --- Mobile Adjustments --- */
 @media (max-width: 767px) { /* Below Tailwind's 'md' breakpoint */
 
@@ -124,12 +133,10 @@ body {
    }
 
    /* Adjust contact icon sizes and spacing */
-   #contact .flex-wrap a i,
-   #contact .flex-wrap a svg {
-       width: 2rem; /* w-8 */
-       height: 2rem; /* h-8 */
-   }
+   /* Adjust contact icon spacing */
    #contact .flex-wrap {
        gap: 1rem; /* Reduce gap between icons */
    }
+
+   /* Contact page styles removed - now internal in contact.html */
 }
