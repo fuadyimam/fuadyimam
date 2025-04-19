@@ -132,11 +132,5 @@ main {
       grid-template-columns: 1fr; /* Stack stats vertically */
    }
 
-   /* Adjust contact icon sizes and spacing */
-   /* Adjust contact icon spacing */
-   #contact .flex-wrap {
-       gap: 1rem; /* Reduce gap between icons */
-   }
-
    /* Contact page styles removed - now internal in contact.html */
 }
